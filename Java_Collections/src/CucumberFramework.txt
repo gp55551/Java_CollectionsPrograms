@@ -1,0 +1,70 @@
+Framework design using cucumber-
+
+The project is a maven project with an architechture of maven-archtype-quickstart 1.1 where all the dependencies are defined
+within the pom.xml file starting like the restAssured dependencies, hamcrest , jackson databind, selenium, testnG(for extent
+reports) and info-cukes for cucumber
+
+The feature file has the test cases in gherkin language which has been achieved using the Natural plugin available in eclipse 
+marketplace which enables us to write the test cases in simple plain language using keywords such as Given, When, And, Then etc
+
+All the feature files have been placed under a common package.
+
+Based on the feature files, step definition files have been created with respect to the feature files they belong to.
+Methods within the step definition files have been written corresponding to the given when then keywords in the feature files
+All the step definition files have been placed under a common package.
+
+A separate package has been created to specifically store the POJO objects for payload. Payload is not sent directly in the 
+POST, PUT requests to keep the code clean and manageable. Separate classes under the POJO package has been created for various 
+payload inputs
+
+
+A separate package is present which deals with the util class and class to store all the API requests. API requests are also written
+in a separate class so that if in future any modification to requests are made, it can be done at one location.
+To achieve this in a better way, we have implemented the concept of Enum classes here
+Enums are used here to avoid the creation of object of a class and then calling all the methods available in it. If there
+are a number of API requests which we have to test, then in that case we will have to create variables and methods for all the
+APIs
+
+Within the utils class we have the functionality of logging into a text file as well as initialization of the base url which
+is defined in properties file. APart from this, any browser related operations where instance of browser needs to be initialized
+is taken care in this file.
+
+All the common functionalities like baseURL, selenium timeouts etc have been defined here
+
+to set multiple data for the test cases, we have defined scenario outlines within the feature files and defined the data using
+Examples keyword and listing out the parameters within this.
+
+Also, to segregate the regression test cases, smoke test cases etc, we have tagged the scenarios with the tag names which can
+be further used in the test runner file for specific execution.
+
+for reporting we have used the maven dependency of maven-cucumber-reporting. within the maven dependency, we have specified
+a parameter <phase> as verify which basically means that this phase will get executed only after all the test cases have been 
+executed. The maven dependency expects a parameter <InputDirectory> which is a jsonfile. to acheive this, within the testrunner
+file, we have specified the ability to generate the json file.  this is specified within the cucumberOptions as below
+plugin = "json:<path where to store this>". specify this path in the maven dependency
+ 
+ 
+ test context
+ data tables
+
+
+Different Cucumber Options available-
+1. Dry run- this option checks if all the steps within the feature file have corresponding step definition.
+Default value is false. If it is set true, then it means that cucumber will check for all the steps within the 
+feature have corresponding methods in step definition file. In case any step is missed, it will notify 
+
+2. Monochrome- this option can be set either true or false. If it is set true then console output for the cucumber test
+is much more readable
+
+3. Feature- used to specify the path of feature files
+4. glue- used to specify the path of step definition files
+
+Using the --strict flag will cause cucumber to fail unless all the step definitions have been defined. 
+
+false: If strict option is set to false then at execution time if cucumber encounters any undefined/pending steps then 
+cucumber does not fail the execution and undefined steps are skipped and BUILD is SUCCESSFUL and
+
+true: if Strict option is set to true then at execution time if cucumber encounters any undefined/pending steps then 
+cucumber does fails the execution and undefined steps are marked as fail and BUILD is FAILURE.
+ 
+

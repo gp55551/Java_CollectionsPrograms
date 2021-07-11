@@ -1,0 +1,241 @@
+1. throw, throws, throwable
+Ans-
+Throw- throw keyword is used to throw an exception manually. Using throw we can throw an exception from any method or block
+but that exception must be of type java.lang.Throwable class or its subclass.
+
+Throws- throws keyword is used in method signature to indicate that the method may throw mentioned exception
+
+Throwable- Throwable is the super class for all the exception and errors in java. this class belongs to java.lang package
+Only instance of this class or its sub classes is thrown by JVM or by the throw statement.
+The only argument of catch block should be of throwable class or its sub classes
+If we want to create our own exceptions, we must extend Throwable class
+
+Subclasses of Throwable are Exception and Error
+
+Difference between Exception and Error-
+Exception is classified as checked and unchecked while error is classified as unchecked
+Exception belongs to Java.lang.Exception while Error belongs to Java.lang.error
+Exception- NullPointerException, ArithmeticException
+Error- OutOfMemoryError, IOError
+
+Difference between Checked and Unchecked Exception-
+Checked Exceptions are checked at compile time. this means that if a method is throwing a checked exception
+it should be handled using try-catch block or it should declare the exception using throws keyword. For example, 
+while reading the content from a file, if the file is not found
+
+ while unchecked exceptions are checked at run time and not at compile time. It means that if the program is throwing an
+ exception and we did not handle it or declare it using throws keyword, the program would not give a compilation error
+ Example- Arithmetic exception, ArrayIndexOutofBoundException
+ 
+2. finalize keyword- final and finally answered. finalize is used to perform clean up processing just before the object
+is collected in garbage collector. Finalize is used to free up heap memory
+
+3. prepare on map collection interface methods
+
+4. difference between List and Set- Answered that list can have duplicates, set cannot have. 
+List is ordered collection of elements and the insertion order is preserved while set is unordered and insertion order is not
+preserved.
+
+List permits any number of null value while set allows only one null value
+
+List can be traversed in both forward and backward direction using ListIterator while set allows only forward traverse using 
+Iterator
+
+Difference between HashMap and HashTable
+1. Hashmap is non synchronized while HashTable is synchronized
+this means that only one thread can access HashTable at a time while multiple threads can access the hashmap simultaneously
+2. Hashmap allows one null key and any number of null values while Hashtable does not allow null keys and null values
+
+5.Difference between comparator and comparable
+Both are interfaces that can be used to sort the elements of collection. Comparator belongs to java.util package while comparable 
+belongs to java.lang package
+
+Comparator provides multiple sorting sequence- i.e we can sort on the basis of multiple elements like id,name, price etc
+Comparable provides single sorting sequence-i.e we can sort on the basis of single elements like id, name, price etc
+
+Comparator provides compare() method to sort
+COmparable provides compareTo() to sort
+
+6. Difference between collection and collections
+Collection is an interface while collections is a class
+Collection interface provides the methods that can be used for data structures while collections class provides static methods
+which can be used for various operations on a collection.
+
+7. read little bit about selenium grid.
+
+8. DIfference between interface and abstract class
+Ans- 1. Java interfaces and implicitly abstract and cannot have implementations while abstract class can have instance methods 
+that implements certain behaviour
+2. Variable declared in interface are by default final while abstract class can have non final variables as well
+3. Members in interface are public by default while abstract class can have public, private or protected members as well
+4. interfaces are implemented using implements keyword while abstract classes are extended using the extends keyword
+5. An interface can implement another interface only while an abstract class can extend other classes as well as implements
+multiple interfaces.
+
+9. Preserve Order in testNG
+10. click the checkbox within alert
+11. how to make static method synchronized
+12. Read String mutability properly
+
+13. Scroll down in selenium
+JavascriptExecutor js = (JavascriptExecutor) driver;  
+   js.executeScript(Script,Arguments);
+   
+TO scroll down the page
+JavascriptExecutor js = (JavascriptExecutor) driver;
+js.executeScript("window.scrollBy(0,1000)");
+
+The syntax of ScrollBy() methods is :
+
+executeScript("window.scrollBy(x-pixels,y-pixels)");
+x-pixels is the number at x-axis, it moves to the left if number is positive and it move to the right if number is negative 
+.y-pixels is the number at y-axis, it moves to the down if number is positive and it move to the up if number is in negative .
+14. get the longest substring
+15. fluent wait
+The Fluent Wait command defines the maximum amount of time for Selenium WebDriver to wait for a certain condition to appear. 
+It also defines the frequency with which WebDriver will check if the condition appears before throwing the “ElementNotVisibleException”.
+
+
+How to check broken links with Selenium WebDriver?
+Use the following steps to identify broken links in Selenium
+
+Collect all the links present on a web page based on the <a> tag
+Send HTTP request for each link
+Verify the HTTP response code
+Determine if the link is valid or broken based on the HTTP response code.
+
+Page object Model-
+It is a design pattern that creates object repositories for each page. Advantage being reduction in code duplication and 
+improving test maintenance.
+
+Under this model, each web page in the application, there should be a corresponding page class. The page class will
+identify all the web elements and also the methods which perform operation on those web elements.
+
+Page Factory-
+Its an in built page object model concept for selenium webdriver. It is also used for initialization of page objects with the 
+help of @FindBy annotation and not requiring to define the objects using findelements.
+
+Page Object is a class that represents a web page and hold the functionality and members. 
+Page Factory is a way to initialize the web elements you want to interact with within the page object when you 
+create an instance of it.
+
+A Page Object Model is a test design pattern which says organize page objects as per pages in such a way that 
+scripts and page objects can be differentiated easily. A Page Factory is one way of implementing PageObject Model 
+which is inbuilt in selenium.
+In POM, you define locators using ‘By’ while in Page Factory, you use FindBy annotation to define page objects.
+Page Object Model is a design approach while PageFactory is a class which provides implementation of Page Object Model 
+design approach.
+
+@FindBy can accept tagName, partialLinkText, name, linkText, id, css, className, xpath as attributes.
+
+Abstract classes in selenium usage-
+Abstract class plays a major role in framework. All the reusable methods that you will use across all page classes are
+written in this abstract class say Reusable library and reusable methods for click, sendkeys, fetchTooltip etc.
+
+Difference between get and navigate.to() in selenium
+The slight technical difference between both is that "get()" method does not return any object's instance i.e. (void) 
+whereas on the other hand "navigate()" method returns the instance of Navigation interface.
+
+driver.get(url) does not maintain the browser history and cookies where as driver.navigate.to(url) maintains browser history
+and cookies.
+
+driver.get(url) wait till the page fully loaded where as driver.navigate.to(url) does not wait till the page fully loaded.
+We can not move forward/backward between the pages with driver.get() but we can navigate between the pages back, 
+forward and refresh with driver.navigate(). 
+
+AHM Framework
+The project is a maven project with an architechture of maven-archtype-quickstart 1.1 where all the dependencies are defined
+within the pom.xml file starting like the restAssured dependencies, selenium, testnG and dependencies for validations related
+to pdf, csv and database validations
+
+The framework is divided in to 4 major packages
+
+In the first package, we have defined multiple classes as per different functionalities within the application.
+Automation logic using selenium methods plus the user defined methods defined which are extensions of already 
+existing selenium methods is implemented in these classes
+
+Second package deals with classes where we have defined the keywords required for achieving automation, initialization 
+of webdriver instances, declaring pre-defined waits, date functions etc
+
+Third package deals with different classes where we have defined the objects which are to be interacted with during the 
+automation implementation
+
+To specify the configuration with respect to browser and different URLs, we have a properties file where we have 
+defined these parameters
+
+To implement the reporting, we have made use of extentReports where we have implemented the methods by writing the logic
+within the methods provided by Ilistener Interface
+OnStart
+OnTestSuccess
+OnTestFailure
+OnTestSkipped
+onTestFailedButWithinSuccessPercentage
+
+klGetSelectedDDLOption
+
+Connection con = null;
+con = DriverManager.getConnection(devconnectionstring, devdbusername, devdbpassword);
+Statement st = con.createStatement();
+			info("created successfully");
+			rset = st.executeQuery(query);
+			
+			
+			
+Advantages of Data Driven Testing Framework
+Allows testing of the application with multiple sets of data values during regression testing
+Separates the test case data from the executable test script
+Allows reusing of Actions and Functions in different tests
+Generates test data automatically. This is helpful when large volumes of random test data are necessary
+Results in the creation of extensive code that is flexible and easy to maintain
+Lets developers and testers separate the logic of their test cases/scripts from the test data
+Allows execution of test cases several times which helps to reduce test cases and scripts
+It does not let changes in test scripts affect the test data.
+
+
+ElementNotVisibleException: If selenium tries to find an element but the element is not visible within the page
+
+NoAlertPresentException: If a user tries to handle an alert box but the alert is not present.
+
+NoSuchAttributeException: While trying to get attribute value but the attribute is not available in DOM.
+
+NoSuchElementException: This exception is due to accessing an element which is not available on the page.
+
+WebDriverException: Exception comes when a code is unable to initialize WebDriver.
+
+When WebDriver is trying to switch to an invalid frame, NoSuchFrameException under NotFoundException class is thrown.
+
+NoSuchWindowException comes under NotFoundException class. This is thrown when WebDriver tries to switch to an invalid window.
+
+ElementNotVisibleException class is a subclass of ElementNotInteractableException class. 
+This exception is thrown when WebDriver tries to perform an action on an invisible web element, which cannot be interacted with.
+That is, the web element is in a hidden state.
+
+ElementNotSelectableException indicates that the web element is present in the web page but cannot be selected.
+
+
+Screenshot-
+Step 1) Convert web driver object to TakeScreenshot
+
+TakesScreenshot scrShot =((TakesScreenshot)webdriver);
+Step 2) Call getScreenshotAs method to create image file
+
+File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
+Step 3) Copy file to Desired Location
+
+Example: In this example we will take screen capture of http://demo.guru99.com/V4/ & save it as C:/Test.png
+
+Absolute Xpath: It contains the complete path from the Root Element to the desire element.
+
+Relative Xpath: This is more like starting simply by referencing the element you want and go from the particular location.
+
+You use always the Relative Path for testing of an element. The reason behind that is if you make any architectural change in 
+the website the change won't effect the testing or selecting of the element.
+
+Single Slash “/” – Single slash is used to create Xpath with absolute path i.e. the xpath would be created to start selection from the document node/start node.
+
+Double Slash “//” – Double slash is used to create Xpath with relative path i.e. the xpath would be created to start selection 
+from anywhere within the document.
+
+/ - Selects from the root node
+
+// - Selects nodes in the document from the current node that match the selection no matter where they are

@@ -1,0 +1,291 @@
+
+
+1. What are the challenges in API testing
+Ans- API Documentation(endpoint, payload, parameters etc), Access to database, authorization overhead
+
+---------------------------------------------------------------------------------------------------------------------
+
+2. Difference between put and post
+Ans-post- creating a new object on the server
+put- updating the object already present on the server. Put is subset of Post
+
+---------------------------------------------------------------------------------------------------------------------
+
+3. Commonly used http requests-
+Ans- Get- to retrieve data from the server
+post- creating a new object on the server
+put- updating the object already present on the server. Put is subset of Post
+Delete- To delete an object already present on the server
+
+---------------------------------------------------------------------------------------------------------------------
+
+4. List out few authentication techniques in API testing-
+Ans- Session/Cookie based authentication
+Basic authentication
+OAuth authentication
+---------------------------------------------------------------------------------------------------------------------
+
+5. What is REST API-
+Ans- Rest stands for Representational State Transfer. It is a set of functions helping developers in performing requests and
+receive responses. Interaction is made through HTTP protocol in REST API
+---------------------------------------------------------------------------------------------------------------------
+
+6. What exactly needs to be tested in API testing
+Ans- 1. We will verify the accuracy of data
+2. HTTP status codes.
+3. response time
+4. Error codes in case API returns any errors.
+5. Authorization.
+6. Non functional testing such as perf testing, security testing
+---------------------------------------------------------------------------------------------------------------------
+
+7. Core components of HTTP request-
+Ans- 1. HTTP methods like get, post, put, delete
+2. Base Uniform Resource locator(BaseURL).
+3. Resource and Paramters
+4. Request Headers and Body
+
+---------------------------------------------------------------------------------------------------------------------
+
+7. Core components of HTTP response-
+Ans- 1. response code
+2. response header
+3. response body
+4. http version
+
+---------------------------------------------------------------------------------------------------------------------
+
+8. What is serialization and deserialization in Rest Assured-
+Ans- serialization is a process of converting java object into request payload
+Deserialization is a process of converting response into java object
+
+---------------------------------------------------------------------------------------------------------------------
+
+9. Json parsing techniques-
+Ans- Json path and Deserialization using POJO classes
+
+---------------------------------------------------------------------------------------------------------------------
+10. POJO
+
+POJO stands for Plain Old Java Object. It is an ordinary Java object, 
+	not bound by any special restriction 
+POJOs are used for increasing the readability and re-usability of a program.
+
+for every key in the json, we will create a variable in a java class. create setters ad getters for these variables
+
+------------------------------------------------------------------
+
+11. OAuth 2.0
+
+OAuth 2.0 is the industry-standard protocol for authorization. 
+
+It works by 
+-assigning user authentication to the service that hosts the user account, 
+-and authorizing third-party applications to access the user account. 
+
+OAuth 2 provides authorization flows for web and desktop applications, and mobile devices.
+
+---------------------------------------------------------------------------------------------------------------------
+
+12. OAuth 2.0 vs OAuth 1.0
+
+OAuth 2.0 signatures are not required for the actual API calls once the token has been generated.
+It has only one security token. 
+
+OAuth 1.0 requires client to send two security tokens for each API call, and use both to generate the signature.
+
+---------------------------------------------------------------------------------------------------------------------
+
+10. How would you send attachments in Rest Assured-
+Ans- Using MultiPart method
+
+---------------------------------------------------------------------------------------------------------------------
+
+11. Different Status codes-
+Ans-200- OK
+201- Created
+400- Bad Request
+401- Unauthorized
+403- Forbidden
+404- Not Found
+405- Method not allowed
+409- Conflict
+500- Internal server error
+503- Service unavailable
+	
+---------------------------------------------------------------------------------------------------------------------
+	
+Q-12. What purpose does the OPTIONS method serve for the RESTful web services?
+Ans. This method lists down all the operations a web service supports. It makes read-only requests to the server.
+
+---------------------------------------------------------------------------------------------------------------------
+
+Q-13. What is URI? Explain its purpose in REST-based web services. What is its format?
+Ans. URI stands for Uniform Resource Identifier. URI is the identifier for the resource in REST architecture.
+
+The purpose of a URI is to locate a resource(s) on the server hosting the web service. A URI is of the following format-
+
+<protocol>://<service-name>/<ResourceType>/<ResourceID>
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+Q-14. What do you understand by payload in RESTFul web service?
+Ans. Request body of every HTTP message includes request data called as Payload. This part of the message is of interest 
+to the recipient.
+
+We can say that we send the payload in the POST method but not in <GET> and <DELTE> methods.
+---------------------------------------------------------------------------------------------------------------------
+
+15. difference between web service and api 
+
+Web service supports only HTTP protocol whereas API supports HTTP/HTTPS protocol. 
+Web service supports XML while API supports XML and JSON. 
+
+All Web services are APIs but all APIs are not web services.
+---------------------------------------------------------------------------------------------------------------------
+
+15. SOAP vs REST
+
+SOAP stands for Simple Object Access Protocol whereas REST stands for Representational State Transfer.
+SOAP is a protocol whereas REST is an architectural pattern.
+SOAP needs more bandwidth for its usage whereas REST doesn’t need much bandwidth.
+SOAP only works with XML formats whereas REST work with plain text, XML, HTML and JSON.
+SOAP cannot make use of REST whereas REST can make use of SOAP.
+
+---------------------------------------------------------------------------------------------------------------------
+
+16. When to use REST
+
+Limited resources and bandwidth – REST should be used in instances where network bandwidth is a constraint.
+Statelessness – If there is no need to maintain a state of information from one request to another then REST should be used.
+Caching – If there is a need to cache a lot of requests then REST is the perfect solution.
+Ease of coding – Coding REST Services and subsequent implementation is far easier than SOAP.
+
+---------------------------------------------------------------------------------------------------------------------
+Q-15. Explain REST?
+Ans. REST stands for Representational State Transfer. REST is an architectural style of developing web services which take
+advantage of the ubiquity of HTTP protocol and leverages HTTP method to define actions. It revolves around resource where every
+component is a resource which can be accessed by a common interface using HTTP standard methods.
+
+In REST architecture, a REST Server provides access to resources and REST client accesses and presents those resources. Here 
+each resource is identified by URIs or global IDs. REST uses different ways to represent a resource like text, JSON, and XML.
+XML and JSON are the most popular representations of resources these days.
+---------------------------------------------------------------------------------------------------------------------
+
+Q-16- Explain the RESTFul Web Service?
+Ans. Mostly, there are two kinds of Web Services which are quite popular.
+
+1. SOAP (Simple Object Access Protocol) which is an XML-based way to expose web services.
+
+2. Web services developed using REST style are known as RESTful web services. These web services use HTTP methods to implement 
+the concept of REST architecture. A RESTful web service usually defines a URI, Uniform Resource Identifier a service, provides 
+resource representation such as JSON and set of HTTP Methods.
+---------------------------------------------------------------------------------------------------------------------
+
+Q-17.Explain what is a “Resource” in REST?
+Ans. REST architecture treats every content as a resource. These resources can be either text files, HTML pages, images, videos 
+or dynamic business data.
+
+REST Server provides access to resources and REST client accesses and modifies these resources. Here each resource is identified
+by URIs/ global IDs.
+---------------------------------------------------------------------------------------------------------------------
+
+13. Serialization/Deserialization-
+Serialization in rest Assured context is a process of converting a java object into request body or payload
+Deserialization in rest assured context is a process of converting the response body back to java object
+
+Advantages- easy to parse and extract response values if they are wrapped as java objects.
+Clean and readable code
+
+Additional libraries needed for POJO classes- Jackson, Jackson2, Gson
+
+for every key in the json, we will create a variable in a java class. create setters ad getters for these variables
+
+---------------------------------------------------------------------------------------------------------------------
+
+14. Importance of specBuilder classes-
+RequestSpecification- 
+this interface allows us to define how the request should look like. 
+Useful when the same request is to be used for multiple test cases. 
+
+RequestSpecBuilder is used to add data from a pre-defined specification
+
+RequestSpecification requestSpec = new RequestSpecBuilder().addParam("parameter1", "value1").build();
+
+ given().
+         spec(requestSpec).
+         param("parameter2", "value2").
+ when().
+        get("/something");
+        
+        
+ or-
+ RequestSpecification req =new RequestSpecBuilder().setBaseUri("https://rahulshettyacademy.com").addQueryParam("key", "qaclick123")
+.setContentType(ContentType.JSON).build();
+
+pass the req in given like above
+
+
+ResponseSpecification- allows to specify how the expected response should look like in order to pass the test
+ResponseSpecification resspec =new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
+
+---------------------------------------------------------------------------------------------------------------------
+
+15. How to capture response time in RestAssured-
+The Response class in rest assured offers a method getTime() which will return the response time. 
+The response time is returned in milliseconds. However for some reason if rest assured can’t get the response time, 
+it returns -1.
+
+
+RequestSpecification requestSpec = new RequestSpecBuilder().build();
+		requestSpec.baseUri("http://localhost");
+		requestSpec.basePath("user/details");
+		Response response = given().spec(requestSpec).get("/10");
+
+		// Print response time
+		System.out.println("Response Time : " + response.getTime());
+---------------------------------------------------------------------------------------------------------------------
+		
+16. How to handle SSL certificate in Rest Assured-
+Ans- By using relaxedHTTPSValidation
+
+given().relaxedHTTPSValidation().when().post("https://my_server.com")
+
+---------------------------------------------------------------------------------------------------------------------
+
+17.  How to set Cookies in Rest Assured-
+Ans-specify custom cookie to our request using cookie():
+@Test
+public void whenUseCookie_thenOK() {
+ 
+    given().cookie("session_id", "1234").when().get("/users/eugenp")
+      .then().statusCode(200);
+}
+
+We can also customize our cookie using cookie Builder:
+@Test
+public void whenUseCookieBuilder_thenOK() {
+    Cookie myCookie = new Cookie.Builder("session_id", "1234")
+      .setSecured(true)
+      .setComment("session id cookie")
+      .build();
+ 
+    given().cookie(myCookie)
+      .when().get("/users/eugenp")
+      .then().statusCode(200);
+}
+---------------------------------------------------------------------------------------------------------------------
+
+18. How to verify cookies in response-
+Ans-We can verify a header or cookie of the response using methods with the same name:
+
+Response response = get(uri + "/welcome");
+ 
+String headerName = response.getHeader("sessionId");
+String cookieValue = response.getCookie("token");
+assertThat(headerName).isNotBlank();
+assertThat(cookieValue).isNotBlank();
+
+---------------------------------------------------------------------------------------------------------------------
+
