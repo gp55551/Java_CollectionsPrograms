@@ -1,7 +1,11 @@
+
+---------------------------------------------------------------------------------------------------------------------
+
 1. What is DevOps-
 its a software development approach which involves continuous development, continuos testing, continuous integration
 continuous deployment and continuous monitoring.
 
+---------------------------------------------------------------------------------------------------------------------
 
 2.DevOps Stages- Mainly it is divided into five stages-
 1. Version Control- Maintains different versions of the code. This stage is also called as Source Code Management
@@ -12,13 +16,16 @@ Continuous testing
 4. Continuous Deployment- Deploying the tested application to prod servers.
 5. Continuous Monitoring- this is part of all the stages to monitor all the stages
 
+---------------------------------------------------------------------------------------------------------------------
 
 3.How to do Continuous integration
-Ans- Jenkins plays a key roles in Continuous integration stage. Its a open source and can be installed in multiple operating systems
+Ans- Jenkins plays a key roles in Continuous integration stage. Its a open source and can be 
+installed in multiple operating systems
 
 Jenkins is a plugin based tool. FOr example- to pull data from git, there is plugin for that
 Stages like complie, code review, unit testing etc are done using the Maven plugin for build automation
 
+---------------------------------------------------------------------------------------------------------------------
 
 4. What is CICD-
 Ans- CI CD pipeline involves the below stages-
@@ -32,17 +39,22 @@ Ans- CI CD pipeline involves the below stages-
 All the stages involves feedback mechanism to inform the appropriate person in case of any issues/failures/success so that action
 can be taken accordingly and quickly
 
+---------------------------------------------------------------------------------------------------------------------
 
 Scheduling concept-
 The format is as follows:
 
 MINUTE (0-59), HOUR (0-23), DAY (1-31), MONTH (1-12), DAY OF THE WEEK (0-6)
 	
-The letter H, representing the word Hash can be inserted instead of any of the values. It will calculate the parameter based on the hash code of you project name.
+The letter H, representing the word Hash can be inserted instead of any of the values. 
+It will calculate the parameter based on the hash code of you project name.
 
-This is so that if you are building several projects on your build machine at the same time, let’s say midnight each day, they do not all start their build execution at the same time. Each project starts its execution at a different minute depending on its hash code.
+This is so that if you are building several projects on your build machine at the same time, 
+let’s say midnight each day, they do not all start their build execution at the same time. 
+Each project starts its execution at a different minute depending on its hash code.
 
-You can also specify the value to be between numbers, i.e. H(0,30) will return the hash code of the project where the possible hashes are 0-30.
+You can also specify the value to be between numbers, i.e. H(0,30) will return the hash code 
+of the project where the possible hashes are 0-30.
 
 Examples:
 
@@ -50,13 +62,16 @@ Start build daily at 08:30 in the morning, Monday - Friday: 30 08 * * 1-5
 
 Weekday daily build twice a day, at lunchtime 12:00 and midnight 00:00, Sunday to Thursday: 00 0,12 * * 0-4
 
-Start build daily in the late afternoon between 4:00 p.m. - 4:59 p.m. or 16:00 -16:59 depending on the projects hash: H 16 * * 1-5
+Start build daily in the late afternoon between 4:00 p.m. - 4:59 p.m. or 16:00 -16:59 
+depending on the projects hash: H 16 * * 1-5
 
 Start build at midnight: @midnight or start build at midnight, every Saturday: 59 23 * * 6
 
 Every first of every month between 2:00 a.m. - 02:30 a.m.: H(0,30) 02 01 * *
 
+---------------------------------------------------------------------------------------------------------------------
 
+Maven :::
 
 A Maven phase represents a stage in the Maven build lifecycle. Each phase is responsible for a specific task.
 
@@ -70,3 +85,7 @@ package: package compiled source code into the distributable format (jar, war, �
 integration-test: process and deploy the package if needed to run integration tests
 install: install the package to a local repository
 deploy: copy the package to the remote repository
+
+---------------------------------------------------------------------------------------------------------------------
+
+
