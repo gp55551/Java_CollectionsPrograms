@@ -4,5 +4,5 @@
 Contents :
 
 Java basic Programs,
-String relted Programs,
+String related Programs,
 Collections programs
