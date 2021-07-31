@@ -3,6 +3,6 @@
 
 Contents :
 
-Java basic Programs
-String relted Programs
+Java basic Programs,
+String relted Programs,
 Collections programs
